@@ -13,6 +13,8 @@ def firstMissingPositive(array):
 
 test1 = [3, 4, -1, 1]
 test2 = [1, 2, 0]
+test3 = [3, 3, 4, -1, 1]
 
-print(firstMissingPositive(test1))
-print(firstMissingPositive(test2))
+print(firstMissingPositive(test1))      # expected output: 2
+print(firstMissingPositive(test2))      # expected output: 3
+print(firstMissingPositive(test3))      # expected output: 2
