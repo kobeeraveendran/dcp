@@ -11,15 +11,19 @@ def num_ways_decoded(message):
     # for a string of length n, there will be n - 1 pairs to check
     for i in range(l - 1):
         sub_str = message[i : i + 2]
-        if int(sub_str) > 26 or int(sub_str) < 1 or sub_str[0] == '0':
+        if int(sub_str) > 26 or sub_str[0] == '0':
             num_ways -= 1
 
     return num_ways
 
-test1 = '111'   # aaa, ak, ka  ==> 3
-test2 = '1111'  # kk, aka, kaa, aak, aaaa ==> 5
-test3 = '271'   # bga ==> 1
+test1 = '111'   # aaa, ak, ka  --> 3
+test2 = '1111'  # kk, aka, kaa, aak, aaaa --> 5
+test3 = '271'   # bga --> 1
+test4 = '101'   # ja --> 1
+test5 = '10001' # unsure; may be either 0 (in which case, not a valid input) or 1 at most (ja)
 
 print(num_ways_decoded(test1))
 print(num_ways_decoded(test2))
 print(num_ways_decoded(test3))
+print(num_ways_decoded(test4))
+print(num_ways_decoded(test5))
