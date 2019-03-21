@@ -15,7 +15,10 @@ def count_unival_subtrees(root):
 
     global ct
 
-    if root.left == root.right == None or root.left.val == root.right.val:
+    if root.left == root.right == None:
+        ct += 1
+
+    if root.left and root.right and root.left.val == root.right.val:
         ct += 1
 
     if root.left:
@@ -35,13 +38,55 @@ def noglobal_count_unival_subtrees(root):
 
         return noglobal_count_unival_subtrees(root.left) + noglobal_count_unival_subtrees(root.right)
 
+    
+    if root.left:
+        return noglobal_count_unival_subtrees(root.left)
+
+    if root.right:
+        return noglobal_count_unival_subtrees(root.right)
+    
 
 root = Node(0, Node(1), Node(0, Node(1, Node(1), Node(1)), Node(0)))
 
-count_unival_subtrees(root)
+
+# tc2: num_univals = 5
+'''
+   0
+  / \
+ 1   0
+    / \
+   1   0
+  / \   \
+ 1   1   1
+'''
+
+root2 = Node(0, Node(1), Node(0, Node(1, Node(1), Node(1)), Node(0, right = Node(1))))
+
+# tc3: num_univals = 1
+'''
+    0
+     \
+      1
+       \
+        1
+         \
+          1
+'''
+root3 = Node(0, right = Node(1, right = Node(1, right = Node(1))))
 
 # method 1
+print('Method 1 out...')
+count_unival_subtrees(root)     # expected out: 5
+print(ct)
+ct = 0
+count_unival_subtrees(root2)    # expected out: 5
+print(ct)
+ct = 0
+count_unival_subtrees(root3)    # expected out: 1
 print(ct)
 
 # method 2
-print(noglobal_count_unival_subtrees(root))
+print('Method 2 out...')
+print(noglobal_count_unival_subtrees(root))     # expected out: 5
+print(noglobal_count_unival_subtrees(root2))    # expected out: 5
+print(noglobal_count_unival_subtrees(root3))    # expected out: 1
