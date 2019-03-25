@@ -24,10 +24,10 @@ def climb_generalized(n, x):
         
     return n_ways
 
-print(climb(4))
-print(climb(5))
-print(climb(3))
+print(climb(4))                         # expected out: 5
+print(climb(5))                         # expected out: 8
+print(climb(3))                         # expected out: 3
 
-print(climb_generalized(4, [1, 2]))
-print(climb_generalized(4, [1, 3]))
-print(climb_generalized(4, [1, 3, 5]))
+print(climb_generalized(4, [1, 2]))     # expected out: 5 (this is essentially the same as the first base test)
+print(climb_generalized(4, [1, 3]))     # expected out: 3 (assuming no over-stepping)
+print(climb_generalized(4, [1, 3, 5]))  # expected out: 3 (assuming no over-stepping)
