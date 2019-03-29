@@ -24,4 +24,5 @@ test4 = 'abbbbbccddda'
 
 print(longest_substring(test1, 2))  # expected out: 3
 print(longest_substring(test2, 2))  # expected out: 6
-print(longest_substring(test3, 2))  # expected out: 7
+print(longest_substring(test3, 2))  # expected out: 8
+print(longest_substring(test4, 2))  # expected out: 7
