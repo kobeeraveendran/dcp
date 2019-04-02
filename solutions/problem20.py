@@ -41,13 +41,21 @@ def find_intersection(listA: Node, listB: Node):
 
     return listA
 
-
+# test 1:
+# A: 3  -> 7 -> 8 -> 10
+# B: 99 -> 1 -> 8 -> 10
 test1_a = Node(3, Node(7, Node(8, Node(10, None))))
 test1_b = Node(99, Node(1, Node(8, Node(10, None))))
 
+# test 2:
+# A:           8 -> 10
+# B: 3 -> 7 -> 8 -> 10
 test2_a = Node(8, Node(10, None))
 test2_b = Node(3, Node(7, Node(8, Node(10, None))))
 
+# test 3:
+# A:      2 -> 8 -> 10
+# B: 3 -> 7 -> 8 -> 10
 test3_a = Node(2, Node(8, Node(10, None)))
 test3_b = Node(3, Node(7, Node(8, Node(10, None))))
 
