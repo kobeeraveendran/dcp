@@ -10,12 +10,12 @@ def find_intersection_linear_space(listA: Node, listB: Node):
     seen = set()
 
     # iterate through A
-    while listA.next != None:
+    while listA != None:
         seen.add(listA.value)
         listA = listA.next
 
     # iterate through B
-    while listB.next != None:
+    while listB != None:
         if listB.value in seen:
             return listB
         
@@ -59,11 +59,20 @@ test2_b = Node(3, Node(7, Node(8, Node(10, None))))
 test3_a = Node(2, Node(8, Node(10, None)))
 test3_b = Node(3, Node(7, Node(8, Node(10, None))))
 
-print(find_intersection_linear_space(test1_a, test1_b).value)
-print(find_intersection(test1_a, test1_b).value)
+# test 4:
+# A:      2 -> 9 -> 10
+# B: 3 -> 7 -> 8 -> 10
+test4_a = Node(2, Node(9, Node(10, None)))
+test4_b = Node(3, Node(7, Node(8, Node(10, None))))
 
-print(find_intersection_linear_space(test2_a, test2_b).value)
+print(find_intersection_linear_space(test1_a, test1_b).value)       # expected out: 8
+print(find_intersection(test1_a, test1_b).value)                    
+
+print(find_intersection_linear_space(test2_a, test2_b).value)       # expected out: 8
 print(find_intersection(test2_a, test2_b).value)
 
-print(find_intersection_linear_space(test3_a, test3_b).value)
+print(find_intersection_linear_space(test3_a, test3_b).value)       # expected out: 8
 print(find_intersection(test3_a, test3_b).value)
+
+print(find_intersection_linear_space(test4_a, test4_b).value)       # expected out: 10
+print(find_intersection(test4_a, test4_b).value)
