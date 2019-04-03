@@ -15,9 +15,11 @@ test1 = [(30, 75), (0, 50), (60, 150)]
 test2 = [(0, 10), (5, 10), (3, 4)]
 test3 = [(0, 10), (5, 10), (3, 4), (3, 10)]
 test4 = [(0, 10), (5, 10), (3, 4), (3, 10), (11, 12)]
+test5 = [(0, 10), (5, 10), (3, 4), (3, 10), (3, 4)]
 
 
 print(room_scheduler(test1))            # expected output: 2
 print(room_scheduler(test2))            # expected output: 2
 print(room_scheduler(test3))            # expected output: 3
 print(room_scheduler(test4))            # expected output: 3
+print(room_scheduler(test5))            # expected output: 4
