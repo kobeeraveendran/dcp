@@ -17,9 +17,9 @@ def reconstruct_sentence(words: set, sentence: str):
 # could also use dictionaries here (as the problem states), but sets are more suited
 # since there isn't a value
 test1 = (set(['quick', 'brown', 'the', 'fox']), 'thequickbrownfox')
-test2 = (set(['bed', 'bath', 'and', 'beyond']), 'bedbathandbeyond')
+test2 = (set(['bed', 'bath', 'bedbath', 'and', 'beyond']), 'bedbathandbeyond')
 test3 = (set(['i', 'am', 'the', 'one', 'who', 'knocks', 'at', 'door']), 'iamtheonewhoknocksatthedoor')
 
-print(reconstruct_sentence(*test1))
-print(reconstruct_sentence(*test2))
-print(reconstruct_sentence(*test3))
+print(reconstruct_sentence(*test1))     # expected out: ['the', 'quick', 'brown', 'fox']
+print(reconstruct_sentence(*test2))     # expected out: ['bed', 'bath', 'and', 'beyond'] or ['bedbath', 'and', 'beyond']
+print(reconstruct_sentence(*test3))     # expected out: ['i', 'am', 'the', 'one', 'who', 'knocks', 'at', 'the', door']
