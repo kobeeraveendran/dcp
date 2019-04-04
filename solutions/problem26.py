@@ -36,8 +36,14 @@ def remove_kth_element(linked_list, k):
 
     return head
 
-test1 = Node(1)
-test1.add(Node(3)).add(Node(7)).add(Node(8)).add(Node(10))
+list1 = Node(1)
+list1.add(Node(3)).add(Node(7)).add(Node(8)).add(Node(10))
+
+list2 = Node(7)
+list2.add(Node(8)).add(Node(1)).add(Node(10)).add(Node(13)).add(Node(7))
+
+list3 = Node(1)
+list3.add(Node(2)).add(Node(3)).add(Node(4)).add(Node(5)).add(Node(6))
 
 def print_linked_list(head: Node):
 
@@ -47,8 +53,22 @@ def print_linked_list(head: Node):
 
     print('Null')
 
+
+# expected outputs should be obvious by viewing output
 print('TEST CASE 1:')
 print('Before:')
-print_linked_list(test1)
-print('After:')
-print_linked_list(remove_kth_element(test1, k = 3))
+print_linked_list(list1)
+print('After removing 3rd last element (0-indexed):')
+print_linked_list(remove_kth_element(list1, k = 3))
+
+print('\nTEST CASE 2:')
+print('Before:')
+print_linked_list(list2)
+print('After removing absolute last element (k = 0):')
+print_linked_list(remove_kth_element(list2, k = 0))
+
+print('\nTEST CASE 3:')
+print('Before:')
+print_linked_list(list3)
+print('After removing the very first element (k = list_len - 1):')
+print_linked_list(remove_kth_element(list3, k = 5))
