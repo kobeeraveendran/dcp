@@ -9,11 +9,10 @@ def calculate_water_trapped(array):
 
     return water
 
+# O(n) time, O(1) space
 def calculate_water_trapped_complete(array):
 
     cap = min(array[0], array[-1])
-    #max_left = array[0]
-    #max_right = array[-1]
 
     water = 0
 
