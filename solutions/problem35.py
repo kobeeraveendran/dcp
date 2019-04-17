@@ -1,8 +1,8 @@
+# longer but technically faster solution
+# runs in linear time by avoiding sorting
 def rgb_sort(text):
 
     num_r = text.count('R')
-
-    r_init = text.index('R')
 
     r_count = 0
     mark = 0
@@ -15,7 +15,6 @@ def rgb_sort(text):
                 r_count += 1
 
                 if r_count == num_r:
-                    leftoff = i
                     break
 
     g_init = text.index('G')
@@ -47,6 +46,6 @@ test1 = ['G', 'B', 'R', 'R', 'B', 'R', 'G']
 test2 = ['G', 'B', 'R', 'R', 'G', 'R', 'B']
 test3 = ['B', 'R', 'G', 'G', 'B', 'R', 'G']
 
-print(rgb_sort(test1))
-print(rgb_sort(test2))
-print(rgb_sort(test3))
+print(rgb_sort(test1))      # expected out: ['R', 'R', 'R', 'G', 'G', 'B', 'B']
+print(rgb_sort(test2))      # expected out: ['R', 'R', 'R', 'G', 'G', 'B', 'B']
+print(rgb_sort(test3))      # expected out: ['R', 'R', 'G', 'G', 'G', 'B', 'B']
