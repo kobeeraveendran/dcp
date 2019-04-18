@@ -5,6 +5,8 @@ class Node:
         self.left = left
         self.right = right
 
+# best case runtime: O(1) - when BST is a left-leaning linked list
+# average; worst case runtime: O(logn) - well-formed BST; when BST is a right-leaning linked list
 def find_second_largest_node(root):
 
     parent = root.left
