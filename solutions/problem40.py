@@ -7,6 +7,7 @@ def find_single(array):
         if array.count(item) == 1:
             return item
 
+# O(N) time, O(k) space, where k is the number of distinct integers
 def find_single2(array):
 
     frequencies = {}
