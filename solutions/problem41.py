@@ -27,12 +27,16 @@ def compute_itinerary(flight_list, start):
     '''
 
     # generate itinerary
-    itinerary.append(origins[start][0])
+    if start not in origins:
+        return None
+    else:
+        itinerary.append(origins[start][0])
     origins[start].remove(origins[start][0])
 
-    for i in range(len(flight_list) - 1):
+    for _ in range(len(flight_list) - 1):
         try:
             itinerary.append(origins[itinerary[-1]][0])
+            origins[itinerary[-2]].remove(origins[itinerary[-2]][0])
         except:
             # this should only happen if the destination of one 
             # origin isn't itself an origin
@@ -44,6 +48,6 @@ test1 = [('SFO', 'HKO'), ('YYZ', 'SFO'), ('YUL', 'YYZ'), ('HKO', 'ORD')]
 test2 = [('A', 'B'), ('A', 'C'), ('B', 'C'), ('C', 'A')]
 test3 = [('SFO', 'COM'), ('COM', 'YYZ')]
 
-print(compute_itinerary(test1, 'YUL'))
-print(compute_itinerary(test2, 'A'))
-print(compute_itinerary(test3, 'COM'))
+print(compute_itinerary(test1, 'YUL'))      # expected out: ['YUL', 'YYZ', 'SFO', 'HKO', 'ORD']
+print(compute_itinerary(test2, 'A'))        # expected out: ['A', 'B', 'C', 'A', 'C']
+print(compute_itinerary(test3, 'COM'))      # expected out: None
