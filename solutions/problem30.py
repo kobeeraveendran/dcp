@@ -26,6 +26,18 @@ def calculate_water_trapped_complete(array):
 
     return water
 
+def calculate_water_trapped_final(array):
+
+    left = array[0]
+    right = array[-1]
+
+    for i in range(array):
+        if array[i - 1] > left:
+            left = array[i - 1]
+
+        if array[i + 1] > right:
+            right = array[i + 1]
+
 test1 = [2, 1, 2]
 test2 = [3, 0, 1, 3, 0, 5]
 test3 = [3, 0, 0, 2, 0, 4]
