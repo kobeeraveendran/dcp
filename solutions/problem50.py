@@ -1,10 +1,6 @@
-def evaluate(string):
-    return eval(string)
-
 # note: postorder traversal of tree gives us the order in which to evaluate the function
 
-
-# binary tree node
+# binary tree node class definition
 class Node:
     
     def __init__(self, val, left = None, right = None):
@@ -30,6 +26,8 @@ def evaluate_function(root: Node):
 
         else:
             tmp.append(val)
+
+    stack.clear()   # in case of multiple calls
 
     return tmp[-1]
 
