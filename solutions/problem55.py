@@ -23,10 +23,12 @@ class URLShortener:
 
 url_shortener = URLShortener()
 test1 = url_shortener.shorten('https://www.google.com')
-print(test1)
+print(test1)                        # expected out: some alphanumeric string of length 6
 test1 = url_shortener.restore(test1)
-print(test1)
+print(test1)                            # expected out: https://www.google.com
+
+# adding the same URL more than once
 test1 = url_shortener.shorten('https://www.google.com')
-print(test1)
+print(test1)                        # expected out: some alphanumeric string of length 6 (different from above)
 test1 = url_shortener.restore(test1)
-print(test1)
+print(test1)                            # expected out: https://www.google.com
